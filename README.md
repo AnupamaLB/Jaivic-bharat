@@ -1,9 +1,34 @@
-# 🌱 Jaivic Bharat - Nature-Aligned Living Platform
+# \# Jaivic Bharat Website
 
-A comprehensive website for the Jaivic Bharat movement showcasing nature-aligned living initiatives across India.
+# 
 
-## 🚀 Live Deployment
-- **Vercel URL:** https://jaivic-bharat.vercel.app
-- **GitHub Repository:** [Your GitHub repo link]
+# This is the official website for the Jaivic Bharat movement.
 
-## 📁 Project Structure
+# 
+
+# \## Pages:
+
+# \- Home: /
+
+# \- About: /about
+
+# \- Founding Principles: /principles  
+
+# \- Programs: /programs
+
+# \- Stakeholders: /stakeholders
+
+# \- Media: /media
+
+# \- Join: /join
+
+# 
+
+# \## Deployment on Vercel:
+
+# 1\. Go to vercel.com
+
+# 2\. Drag and drop this folder
+
+# 3\. Click "Deploy"
+

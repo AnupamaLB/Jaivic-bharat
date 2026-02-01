@@ -18,10 +18,6 @@
     {
       "src": "images/*",
       "use": "@vercel/static"
-    },
-    {
-      "src": "*.ico",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -36,40 +32,36 @@
       "headers": {
         "Cache-Control": "public, max-age=0, must-revalidate"
       }
-    },
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/about",
-      "dest": "/about.html"
-    },
-    {
-      "src": "/principles",
-      "dest": "/founding-principles.html"
-    },
-    {
-      "src": "/programs",
-      "dest": "/programs.html"
-    },
-    {
-      "src": "/stakeholders",
-      "dest": "/stakeholders.html"
-    },
-    {
-      "src": "/media",
-      "dest": "/media.html"
-    },
-    {
-      "src": "/join",
-      "dest": "/join.html"
     }
   ],
   "rewrites": [
     {
       "source": "/",
       "destination": "/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/principles",
+      "destination": "/founding-principles.html"
+    },
+    {
+      "source": "/programs",
+      "destination": "/programs.html"
+    },
+    {
+      "source": "/stakeholders",
+      "destination": "/stakeholders.html"
+    },
+    {
+      "source": "/media",
+      "destination": "/media.html"
+    },
+    {
+      "source": "/join",
+      "destination": "/join.html"
     }
   ],
   "env": {
