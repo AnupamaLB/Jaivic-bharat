@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs - Jaivic Bharat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/transitions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for programs page */
+        .programs-hero {
+            background: linear-gradient(135deg, rgba(42, 110, 63, 0.9), rgba(56, 140, 85, 0.8));
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .programs-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .programs-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .program-intro {
+            text-align: center;
+            padding: 40px 0;
+            background: #f8f9fa;
+        }
+        
+        .program-intro p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+        }
+        
+        /* Main Content Container */
+        .programs-main-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        /* Programs Filter/Info Bar */
+        .programs-info-bar {
+            background: #f8fff8;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+            border: 1px solid #e9f5e9;
+            box-shadow: 0 4px 15px rgba(42, 110, 63, 0.05);
+        }
+        
+        .info-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .info-text {
+            flex: 1;
+        }
+        
+        .info-text h3 {
+            color: #2a6e3f;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .info-text p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .info-stats {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            min-width: 80px;
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #2a6e3f;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        /* Accordion/Dropdown Container */
+        .accordion-container {
+            width: 100%;
+        }
+        
+        /* Accordion Item */
+        .accordion-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid #e0e6dc;
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-item:hover {
+            box-shadow: 0 6px 25px rgba(42, 110, 63, 0.12);
+            border-color: #2a6e3f;
+        }
+        
+        .accordion-item.active {
+            border-color: #2a6e3f;
+            box-shadow: 0 8px 30px rgba(42, 110, 63, 0.15);
+        }
+        
+        /* Accordion Header */
+        .accordion-header {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .accordion-item.active .accordion-header {
+            background: #f8fff8;
+            border-bottom: 1px solid #e9f5e9;
+        }
+        
+        .accordion-header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+        }
+        
+        .accordion-number {
+            width: 50px;
+            height: 50px;
+            background: #2a6e3f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .accordion-item.climate .accordion-number {
+            background: #2a8cbe;
+        }
+        
+        .accordion-title-section {
+            flex: 1;
+        }
+        
+        .accordion-category {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            background: #e9f5e9;
+            color: #2a6e3f;
+        }
+        
+        .accordion-item.climate .accordion-category {
+            background: #e8f4fc;
+            color: #2a8cbe;
+        }
+        
+        .accordion-title {
+            font-size: 1.4rem;
+            color: #2a6e3f;
+            margin-bottom: 5px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .accordion-item.climate .accordion-title {
+            color: #2a8cbe;
+        }
+        
+        .accordion-oneliner {
+            color: #666;
+            font-size: 0.95rem;
+            max-width: 600px;
+        }
+        
+        .accordion-toggle {
+            font-size: 1.2rem;
+            color: #2a6e3f;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+        
+        .accordion-item.active .accordion-toggle {
+            transform: rotate(180deg);
+        }
+        
+        /* Accordion Content */
+        .accordion-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-content {
+            padding: 30px;
+            max-height: 1000px;
+        }
+        
+        /* Content Layout */
+        .program-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .detail-section {
+            background: #f9fdf9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e9f5e9;
+        }
+        
+        .detail-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #2a6e3f;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e6dc;
+        }
+        
+        .detail-title i {
+            font-size: 1rem;
+        }
+        
+        .detail-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .detail-list li {
+            padding: 8px 0;
+            font-size: 0.95rem;
+            color: #555;
+            border-bottom: 1px dashed #e0e6dc;
+            display: flex;
+            align-items: center;
+        }
+        
+        .detail-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-list li i {
+            color: #2a6e3f;
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* Quick Actions */
+        .program-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 2px solid #e9f5e9;
+        }
+        
+        .program-outcomes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .outcome-tag {
+            background: #e9f5e9;
+            color: #2a6e3f;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .outcome-tag i {
+            font-size: 0.8rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .action-btn {
+            padding: 10px 25px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            border: none;
+            text-decoration: none;
+        }
+        
+        .know-more-btn {
+            background: #2a6e3f;
+            color: white;
+        }
+        
+        .know-more-btn:hover {
+            background: #3c8c55;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(42, 110, 63, 0.2);
+        }
+        
+        .quick-register-btn {
+            background: white;
+            color: #2a6e3f;
+            border: 2px solid #2a6e3f;
+        }
+        
+        .quick-register-btn:hover {
+            background: #f1f8e9;
+            transform: translateY(-2px);
+        }
+        
+        .accordion-item.climate .know-more-btn {
+            background: #2a8cbe;
+        }
+        
+        .accordion-item.climate .know-more-btn:hover {
+            background: #3498db;
+        }
+        
+        .accordion-item.climate .quick-register-btn {
+            border-color: #2a8cbe;
+            color: #2a8cbe;
+        }
+        
+        /* Join CTA Section */
+        .programs-join-cta {
+            background: linear-gradient(135deg, #2a6e3f, #3c8c55);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 12px;
+        }
+        
+        .programs-join-cta h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .programs-join-cta p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .join-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .join-option-btn {
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .join-individual {
+            background: white;
+            color: #2a6e3f;
+            border: 2px solid white;
+        }
+        
+        .join-organization {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .join-option-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .join-individual:hover {
+            background: #f8f9fa;
+        }
+        
+        .join-organization:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .programs-hero {
+                padding: 60px 0 40px;
+            }
+            
+            .programs-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .info-bar-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .info-stats {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .stat-item {
+                min-width: 70px;
+            }
+            
+            .accordion-header {
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .accordion-header-left {
+                width: 100%;
+            }
+            
+            .accordion-toggle {
+                position: absolute;
+                right: 20px;
+                top: 25px;
+            }
+            
+            .program-details-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .program-actions {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .action-buttons {
+                width: 100%;
+                flex-direction: column;
+            }
+            
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .join-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .join-option-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .accordion-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            
+            .accordion-title {
+                font-size: 1.2rem;
+            }
+            
+            .info-stats {
+                gap: 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                <h1>Jaivic<span>Bharat</span></h1>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="founding-principles.html"><i class="fas fa-landmark"></i> Founding Principles</a></li>
+                    <li><a href="programs.html" class="active"><i class="fas fa-tasks"></i> Programs</a></li>
+                    <li><a href="stakeholders.html"><i class="fas fa-handshake"></i> Stakeholders</a></li>
+                    <li><a href="media.html"><i class="fas fa-newspaper"></i> Media</a></li>
+                    <li><a href="join.html"><i class="fas fa-user-plus"></i> Join</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Programs Hero Section -->
+    <section class="programs-hero">
+        <div class="container">
+            <h1>Our Programs</h1>
+            <p>Jiva-centric initiatives across health, food, habitat, livelihoods, culture, and climate—built through community participation.</p>
+            <p><i class="fas fa-chevron-down"></i> Click on any program to expand details and explore</p>
+        </div>
+    </section>
+
+    <!-- Program Introduction -->
+    <section class="program-intro">
+        <div class="container">
+            <p>Explore our initiatives through interactive dropdown sections. Each program is designed to create tangible impact through community-led action.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="programs-main-container">
+        <!-- Programs Info Bar -->
+        <div class="programs-info-bar">
+            <div class="info-bar-content">
+                <div class="info-text">
+                    <h3><i class="fas fa-info-circle"></i> How to Navigate</h3>
+                    <p>Click on any program header to expand details. Use the action buttons inside each program to learn more or register interest.</p>
+                </div>
+                <div class="info-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Programs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Focus Areas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Communities</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Programs -->
+        <div class="accordion-container">
+            <!-- Programs will be populated by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Join CTA Section -->
+    <section class="programs-join-cta">
+        <div class="container">
+            <h2>Ready to Make a Difference?</h2>
+            <p>Join the movement and be part of nature-aligned living. Choose how you'd like to participate.</p>
+            <div class="join-options">
+                <a href="join.html#individuals" class="join-option-btn join-individual">
+                    <i class="fas fa-user"></i> Join as Individual
+                </a>
+                <a href="join.html#organizations" class="join-option-btn join-organization">
+                    <i class="fas fa-building"></i> Join as Organization
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Jaivic Bharat</h3>
+                    <p>Nature-Aligned Living, Led by Citizens</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="founding-principles.html">Founding Principles</a>
+                    <a href="programs.html">Programs</a>
+                    <a href="join.html">Join Us</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> connect@jaivicbharat.org</p>
+                    <p><i class="fas fa-phone"></i> +91 1800-JAIVIC</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Across India</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Our Growth</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jaivic Bharat. All rights reserved.</p>
+                <p>Health • Habitat • Livelihoods • Culture</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Program data matching the website theme
+        const programs = [
+            {
+                id: 1,
+                title: "Jaivic Wellness Circles",
+                category: "Health & Wellness",
+                oneliner: "Monthly circles for preventive wellness, awareness, and everyday health routines.",
+                activities: ["Join monthly community meets", "Learn simple wellness routines", "Build continuity through peer support", "Share traditional health practices"],
+                participants: ["Individuals seeking wellness", "Organizations (hosts/sponsors)", "Community health workers", "Wellness practitioners"],
+                outcomes: ["Stronger daily health habits", "Local wellness communities", "Early prevention awareness", "Reduced healthcare costs"]
+            },
+            {
+                id: 2,
+                title: "Jaivic Clean Plate Mission",
+                category: "Food & Agriculture",
+                oneliner: "Clean, safe food from soil to plate—via kitchen gardens and regenerative farming.",
+                activities: ["Start kitchen gardens", "Support organic transition", "Compost & soil literacy", "Connect growers and communities", "Seed saving workshops"],
+                participants: ["Individuals & families", "Farmers/FPOs", "Schools/RWAs/NGOs", "CSR/Partners", "Urban gardeners"],
+                outcomes: ["Safer nutrition access", "Healthier soils", "Resilient local food ecosystems", "Reduced food miles"]
+            },
+            {
+                id: 3,
+                title: "Farm-to-Community Organic Bazaar",
+                category: "Food & Markets",
+                oneliner: "Direct markets linking growers to conscious communities—fair and transparent.",
+                activities: ["Participate in pop-up markets", "Enable trust-based sourcing", "Build producer–consumer networks", "Digital marketplace access"],
+                participants: ["Conscious consumers", "Growers/FPOs", "Market partners", "Local communities", "Restaurants & cafes"],
+                outcomes: ["Fair pricing for producers", "Stronger rural livelihoods", "Trusted clean food access", "Reduced middlemen"]
+            },
+            {
+                id: 4,
+                title: "Eco-Habitat & Eco-Tourism Network",
+                category: "Habitat & Tourism",
+                oneliner: "Regenerative stays and habitats that support livelihoods and nature-based wellbeing.",
+                activities: ["Onboard habitat partners", "Curate wellness/culture/nature experiences", "Enable responsible tourism", "Heritage conservation"],
+                participants: ["Travelers & nature lovers", "Property owners/operators", "District tourism partners", "Local guides"],
+                outcomes: ["Sustainable tourism models", "Local job creation", "Models of regenerative living", "Cultural preservation"]
+            },
+            {
+                id: 5,
+                title: "Culture & Creative Economy Collective",
+                category: "Culture & Arts",
+                oneliner: "Support artists and artisans through experiences, workshops, and ethical marketplaces.",
+                activities: ["Onboard creators", "Host/attend cultural experiences", "Enable ethical selling via pop-ups/showcases", "Skill development workshops"],
+                participants: ["Artists/Artisans", "Cultural enthusiasts", "Sponsors/Partners", "Designers & makers"],
+                outcomes: ["Dignified creative livelihoods", "Heritage continuity", "Vibrant community culture", "Market access for artisans"]
+            },
+            {
+                id: 6,
+                title: "Skill-to-Earnings Livelihood Program",
+                category: "Livelihood & Skills",
+                oneliner: "Practical skills linked to local enterprise and employment.",
+                activities: ["Learn job-ready skills", "Get mentorship & market linkage", "Build micro-enterprises", "Access to startup resources"],
+                participants: ["Youth & job seekers", "Women entrepreneurs", "Organizations (mentors/hiring)", "CSR initiatives"],
+                outcomes: ["Employable skills development", "Micro-enterprise creation", "Stronger local economies", "Reduced migration"]
+            },
+            {
+                id: 7,
+                title: "Solar & Sustainability Connect",
+                category: "Climate & Energy",
+                oneliner: "Match support, implementers, and buyers to accelerate sustainability solutions.",
+                activities: ["Register by role", "Join screening + matchmaking", "Explore solar and allied solutions", "Community energy projects"],
+                participants: ["Individuals & households", "Organizations & businesses", "Implementers & innovators", "Energy consultants"],
+                outcomes: ["Faster solution execution", "Credible partnerships", "Scalable climate impact", "Energy independence"]
+            }
+        ];
+
+        // DOM Elements
+        const accordionContainer = document.querySelector('.accordion-container');
+        let currentOpenAccordion = null;
+
+        // Generate accordion items
+        programs.forEach(program => {
+            // Create accordion item
+            const accordionItem = document.createElement('div');
+            accordionItem.className = 'accordion-item';
+            accordionItem.id = `program-${program.id}`;
+            
+            accordionItem.innerHTML = `
+                <div class="accordion-header">
+                    <div class="accordion-header-left">
+                        <div class="accordion-number">${program.id}</div>
+                        <div class="accordion-title-section">
+                            <span class="accordion-category">${program.category}</span>
+                            <h3 class="accordion-title">${program.title}</h3>
+                            <p class="accordion-oneliner">${program.oneliner}</p>
+                        </div>
+                    </div>
+                    <div class="accordion-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="accordion-content">
+                    <div class="program-details-grid">
+                        <div class="detail-section">
+                            <div class="detail-title">
+                                <i class="fas fa-tasks"></i>
+                                <h4>What You'll Do</h4>
+                            </div>
+                            <ul class="detail-list">
+                                ${program.activities.map(activity => `<li><i class="fas fa-check"></i> ${activity}</li>`).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <div class="detail-title">
+                                <i class="fas fa-users"></i>
+                                <h4>Who Can Join</h4>
+                            </div>
+                            <ul class="detail-list">
+                                ${program.participants.map(participant => `<li><i class="fas fa-user"></i> ${participant}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="program-actions">
+                        <div class="program-outcomes">
+                            <span class="outcome-tag"><i class="fas fa-leaf"></i> ${program.outcomes[0]}</span>
+                            <span class="outcome-tag"><i class="fas fa-chart-line"></i> ${program.outcomes[1]}</span>
+                            ${program.outcomes[2] ? `<span class="outcome-tag"><i class="fas fa-star"></i> ${program.outcomes[2]}</span>` : ''}
+                        </div>
+                        <div class="action-buttons">
+                            <a href="join.html?program=${program.id}" class="action-btn quick-register-btn">
+                                <i class="fas fa-user-plus"></i> Quick Register
+                            </a>
+                            <a href="join.html#individuals" class="action-btn know-more-btn">
+                                <i class="fas fa-info-circle"></i> More Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            accordionContainer.appendChild(accordionItem);
+        });
+
+        // Add Climate Anchor as special accordion
+        const climateAccordion = document.createElement('div');
+        climateAccordion.className = 'accordion-item climate';
+        climateAccordion.id = 'program-8';
+        
+        climateAccordion.innerHTML = `
+            <div class="accordion-header">
+                <div class="accordion-header-left">
+                    <div class="accordion-number">8</div>
+                    <div class="accordion-title-section">
+                        <span class="accordion-category">Climate Action</span>
+                        <h3 class="accordion-title">Climate Anchor — Water & Biodiversity Regeneration</h3>
+                        <p class="accordion-oneliner">Community action to restore water systems and biodiversity for long-term resilience.</p>
+                    </div>
+                </div>
+                <div class="accordion-toggle">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="accordion-content">
+                <div class="program-details-grid">
+                    <div class="detail-section">
+                        <div class="detail-title">
+                            <i class="fas fa-tint"></i>
+                            <h4>Key Focus Areas</h4>
+                        </div>
+                        <ul class="detail-list">
+                            <li><i class="fas fa-check"></i> Water conservation & recharge projects</li>
+                            <li><i class="fas fa-check"></i> Native species plantation drives</li>
+                            <li><i class="fas fa-check"></i> Biodiversity documentation & mapping</li>
+                            <li><i class="fas fa-check"></i> Community-led conservation planning</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <div class="detail-title">
+                            <i class="fas fa-users"></i>
+                            <h4>Who Can Join</h4>
+                        </div>
+                        <ul class="detail-list">
+                            <li><i class="fas fa-user"></i> Community groups & RWAs</li>
+                            <li><i class="fas fa-building"></i> NGOs & environmental organizations</li>
+                            <li><i class="fas fa-graduation-cap"></i> Educational institutions</li>
+                            <li><i class="fas fa-landmark"></i> Government bodies</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="program-actions">
+                    <div class="program-outcomes">
+                        <span class="outcome-tag"><i class="fas fa-tint"></i> Enhanced water security</span>
+                        <span class="outcome-tag"><i class="fas fa-tree"></i> Restored native biodiversity</span>
+                        <span class="outcome-tag"><i class="fas fa-shield-alt"></i> Community climate resilience</span>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="join.html?program=8" class="action-btn quick-register-btn">
+                            <i class="fas fa-user-plus"></i> Quick Register
+                        </a>
+                        <a href="join.html#individuals" class="action-btn know-more-btn">
+                            <i class="fas fa-info-circle"></i> More Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        accordionContainer.appendChild(climateAccordion);
+
+        // Accordion toggle functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const accordionItem = header.parentElement;
+                const isActive = accordionItem.classList.contains('active');
+                
+                // If clicking on an already active accordion, close it
+                if (isActive) {
+                    accordionItem.classList.remove('active');
+                    currentOpenAccordion = null;
+                } else {
+                    // Close all other accordions
+                    document.querySelectorAll('.accordion-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open the clicked one
+                    accordionItem.classList.add('active');
+                    currentOpenAccordion = accordionItem.id.replace('program-', '');
+                }
+            });
+        });
+
+        // Initialize - Open first accordion by default
+        setTimeout(() => {
+            document.getElementById('program-1').classList.add('active');
+            currentOpenAccordion = '1';
+        }, 500);
+    </script>
+</body>
+</html>

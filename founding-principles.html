@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founding Principles - Jaivic Bharat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/transitions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Clickable Pillar Grid Styles */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .pillar-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            border-color: #2e8b57;
+        }
+        
+        .pillar-card.active {
+            border-color: #2e8b57;
+            background: linear-gradient(135deg, #f8fff9, #ffffff);
+        }
+        
+        .pillar-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .pillar-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(46, 139, 87, 0.15);
+            line-height: 1;
+            min-width: 60px;
+        }
+        
+        .pillar-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #2e8b57, #3aaf6c);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .pillar-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: #2e8b57;
+            margin: 0;
+            flex: 1;
+            line-height: 1.3;
+        }
+        
+        .pillar-subtitle {
+            color: #3498db;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-left: 75px; /* Align with content below icon */
+        }
+        
+        .pillar-content {
+            display: none;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .pillar-card.active .pillar-content {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .pillar-content p {
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .pillar-points {
+            display: grid;
+            gap: 12px;
+        }
+        
+        .point {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            background: rgba(46, 139, 87, 0.05);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .point:hover {
+            background: rgba(46, 139, 87, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .point i {
+            color: #2e8b57;
+            font-size: 1.1rem;
+            width: 24px;
+        }
+        
+        .point span {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        
+        .know-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #2e8b57;
+            font-weight: 600;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding: 8px 16px;
+            background: rgba(46, 139, 87, 0.1);
+            border-radius: 6px;
+        }
+        
+        .know-more-btn:hover {
+            background: rgba(46, 139, 87, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .know-more-btn i {
+            transition: transform 0.2s ease;
+        }
+        
+        .pillar-card.active .know-more-btn i {
+            transform: rotate(180deg);
+        }
+        
+        /* CTA Section Styling */
+        .principles-cta {
+            background: linear-gradient(135deg, rgba(46, 139, 87, 0.05) 0%, rgba(52, 152, 219, 0.05) 100%);
+            padding: 60px 0;
+            margin: 60px 0 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .principles-cta h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2e8b57;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .principles-cta p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: #2e8b57;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #2e8b57;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            color: #2e8b57;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(46, 139, 87, 0.2);
+        }
+        
+        .cta-button.secondary {
+            background: #3498db;
+            border-color: #3498db;
+        }
+        
+        .cta-button.secondary:hover {
+            background: white;
+            color: #3498db;
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.2);
+        }
+        
+        .cta-button i {
+            font-size: 1.2rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .pillar-card {
+                padding: 25px;
+            }
+            
+            .principles-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .principles-cta p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .pillar-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .pillar-number {
+                min-width: auto;
+                font-size: 2.5rem;
+            }
+            
+            .pillar-subtitle {
+                padding-left: 0;
+                text-align: center;
+            }
+            
+            .pillar-icon {
+                margin: 0 auto;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                <h1>Jaivic<span>Bharat</span></h1>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="founding-principles.html" class="active"><i class="fas fa-landmark"></i> Principles</a></li>
+                    <li><a href="programs.html"><i class="fas fa-tasks"></i> Programs</a></li>
+                    <li><a href="stakeholders.html"><i class="fas fa-handshake"></i> Stakeholders</a></li>
+                    <li><a href="media.html"><i class="fas fa-newspaper"></i> Media</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Principles Hero Section -->
+    <section class="page-hero principles-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="page-title">Founding Principles</h1>
+                <p class="page-subtitle">The Four Pillars of Regenerative Transformation</p>
+                <div class="hero-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Click on each pillar to know more about our framework for sustainable change</p>
+                    <i class="fas fa-quote-right"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="principles-intro">
+        <div class="container">
+            <div class="intro-content">
+                <h2>The Framework for Change</h2>
+                <p class="intro-statement">
+                    Our founding principle rests on four interconnected pillars that create a complete ecosystem for sustainable change. Each pillar reinforces the others—forming a practical, scalable model where people and planet thrive together.
+                </p>
+                <div class="interconnected-note">
+                    <i class="fas fa-sitemap"></i>
+                    <p>These pillars are interconnected—strengthening one strengthens all, creating a holistic transformation system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Four Pillars Grid with Clickable Cards -->
+    <section class="four-pillars">
+        <div class="container">
+            <div class="pillars-grid">
+                <!-- Pillar 1 -->
+                <div class="pillar-card" data-pillar="1">
+                    <div class="pillar-header">
+                        <div class="pillar-number">01</div>
+                        <div class="pillar-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Regenerative Prosperity & Livelihoods</h3>
+                    </div>
+                    <h4 class="pillar-subtitle">Building Economies That Restore, Not Extract</h4>
+                    
+                    <div class="pillar-content">
+                        <p>We create durable livelihood pathways by connecting local producers, artisans, and enterprises to ethical markets. Through fair-value supply chains, skill-to-earnings support, and micro-enterprise incubation, we foster economic resilience that works with nature—not against it.</p>
+                        <div class="pillar-points">
+                            <div class="point">
+                                <i class="fas fa-handshake"></i>
+                                <span>Fair-value supply chains</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Skill-to-earnings support</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-rocket"></i>
+                                <span>Micro-enterprise incubation</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="know-more-btn">
+                        <span>Know More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="pillar-card" data-pillar="2">
+                    <div class="pillar-header">
+                        <div class="pillar-number">02</div>
+                        <div class="pillar-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Community Wellness & Holistic Wellbeing</h3>
+                    </div>
+                    <h4 class="pillar-subtitle">Health Systems Rooted in Prevention & Access</h4>
+                    
+                    <div class="pillar-content">
+                        <p>We strengthen grassroots wellness ecosystems through preventive healthcare, nutrition awareness, and accessible wellness practices. Partnering with local health centers and community groups, we build systems where wellbeing is sustainable, equitable, and woven into daily life.</p>
+                        <div class="pillar-points">
+                            <div class="point">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Preventive healthcare</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-apple-alt"></i>
+                                <span>Nutrition awareness</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-hands-helping"></i>
+                                <span>Community health partnerships</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="know-more-btn">
+                        <span>Know More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="pillar-card" data-pillar="3">
+                    <div class="pillar-header">
+                        <div class="pillar-number">03</div>
+                        <div class="pillar-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Sustainable Systems & Climate Resilience</h3>
+                    </div>
+                    <h4 class="pillar-subtitle">Future-Ready Infrastructure at Every Scale</h4>
+                    
+                    <div class="pillar-content">
+                        <p>From household solutions to institutional projects, we enable sustainable systems in energy, water, waste, and habitat regeneration. Our carbon-reduction initiatives and green partnerships ensure development aligns with ecological balance—building efficiency and resilience for future generations.</p>
+                        <div class="pillar-points">
+                            <div class="point">
+                                <i class="fas fa-solar-panel"></i>
+                                <span>Renewable energy systems</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-tint"></i>
+                                <span>Water management solutions</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-recycle"></i>
+                                <span>Waste-to-resource systems</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="know-more-btn">
+                        <span>Know More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="pillar-card" data-pillar="4">
+                    <div class="pillar-header">
+                        <div class="pillar-number">04</div>
+                        <div class="pillar-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Transparent Impact & Accountability</h3>
+                    </div>
+                    <h4 class="pillar-subtitle">Visible, Measurable, Trustworthy Outcomes</h4>
+                    
+                    <div class="pillar-content">
+                        <p>We believe impact must be trackable, verifiable, and communicated clearly. Through rigorous monitoring, real-time reporting, and audit-ready documentation, we ensure every initiative delivers measurable results—so communities, partners, and supporters see exactly what grows and thrives from collective action.</p>
+                        <div class="pillar-points">
+                            <div class="point">
+                                <i class="fas fa-search"></i>
+                                <span>Rigorous monitoring</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-clock"></i>
+                                <span>Real-time reporting</span>
+                            </div>
+                            <div class="point">
+                                <i class="fas fa-file-contract"></i>
+                                <span>Audit-ready documentation</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="know-more-btn">
+                        <span>Know More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	
+	
+	
+	
+	
+
+
+    <!-- How Pillars Work Together -->
+    <section class="pillars-synergy">
+        <div class="container">
+            <h2>How the Pillars Work Together</h2>
+            <div class="synergy-content">
+                <div class="synergy-image">
+                    <div class="interconnected-circle">
+                        <div class="circle-center">
+                            <i class="fas fa-sync-alt"></i>
+                            <p>Holistic Transformation</p>
+                        </div>
+                        <div class="circle-item item-1">
+                            <span>Prosperity</span>
+                        </div>
+                        <div class="circle-item item-2">
+                            <span>Wellness</span>
+                        </div>
+                        <div class="circle-item item-3">
+                            <span>Sustainability</span>
+                        </div>
+                        <div class="circle-item item-4">
+                            <span>Transparency</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="synergy-text">
+                    <h3>Interconnected Ecosystem</h3>
+                    <p>These four pillars are not separate initiatives—they form a living system where each supports and enhances the others:</p>
+                    <ul class="synergy-points">
+                        <li><strong>Prosperity fuels Wellness</strong> - Economic stability enables health investments</li>
+                        <li><strong>Wellness enables Sustainability</strong> - Healthy communities maintain ecosystems</li>
+                        <li><strong>Sustainability ensures Prosperity</strong> - Natural resources support long-term livelihoods</li>
+                        <li><strong>Transparency connects all</strong> - Clear impact tracking builds trust and improvement</li>
+                    </ul>
+                    <div class="synergy-note">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>This integrated approach ensures our work creates lasting, systemic change rather than isolated improvements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section - Now with the exact text from image.png -->
+    <section class="principles-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Build With These Principles</h2>
+                <p>These pillars guide every Jaivic Bharat initiative. Whether you're a community member, partner, or supporter, you're building on this solid foundation.</p>
+                <div class="cta-buttons">
+                    <a href="programs.html" class="cta-button">
+                        <i class="fas fa-tasks"></i> See Our Programs
+                    </a>
+                    <a href="index.html#join-form" class="cta-button secondary">
+                        <i class="fas fa-user-plus"></i> Join the Movement
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Jaivic Bharat</h3>
+                    <p>Nature-Aligned Living, Led by Citizens</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="founding-principles.html">Principles</a>
+                    <a href="programs.html">Programs</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> contact@jaivicbharat.org</p>
+                    <p><i class="fas fa-phone"></i> +91 1800-JAIVIC</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jaivic Bharat. Built on Four Pillars of Regenerative Transformation</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Click functionality for pillar cards
+            const pillarCards = document.querySelectorAll('.pillar-card');
+            
+            pillarCards.forEach(card => {
+                const knowMoreBtn = card.querySelector('.know-more-btn');
+                
+                // Click on card or button
+                card.addEventListener('click', function(e) {
+                    // Don't trigger if clicking on a link inside the card
+                    if (e.target.tagName === 'A') return;
+                    
+                    // Toggle active state
+                    const isActive = this.classList.contains('active');
+                    
+                    // Remove active class from all cards
+                    pillarCards.forEach(c => c.classList.remove('active'));
+                    
+                    // If the clicked card wasn't active, make it active
+                    if (!isActive) {
+                        this.classList.add('active');
+                    }
+                });
+                
+                // Button specific click
+                knowMoreBtn.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent card click from firing
+                    const card = this.closest('.pillar-card');
+                    const isActive = card.classList.contains('active');
+                    
+                    pillarCards.forEach(c => c.classList.remove('active'));
+                    
+                    if (!isActive) {
+                        card.classList.add('active');
+                    }
+                });
+            });
+            
+            // Set active navigation link
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === 'founding-principles.html') {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            
+            // Initialize with first pillar active
+            pillarCards[0].classList.add('active');
+        });
+    </script>
+</body>
+</html>
+</html>

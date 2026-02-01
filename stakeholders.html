@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Stakeholders - Jaivic Bharat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/transitions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Stakeholders Page Specific Styles */
+        :root {
+            --stakeholder-individual: #3498db;
+            --stakeholder-farmer: #2ecc71;
+            --stakeholder-artist: #9b59b6;
+            --stakeholder-eco: #1abc9c;
+            --stakeholder-community: #e74c3c;
+            --stakeholder-enterprise: #f39c12;
+            --stakeholder-investor: #34495e;
+            --stakeholder-developer: #e67e22;
+            --stakeholder-buyer: #2c3e50;
+        }
+        
+        .stakeholders-hero {
+            background: linear-gradient(135deg, rgba(42, 110, 63, 0.9), rgba(56, 140, 85, 0.8)), url('https://images.unsplash.com/photo-1559523182-a284c3fb7cff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stakeholders-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(42, 110, 63, 0.7), rgba(26, 188, 156, 0.5));
+            z-index: 1;
+        }
+        
+        .stakeholders-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stakeholders-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stakeholders-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .stakeholders-intro {
+            text-align: center;
+            padding: 40px 0;
+            background: #f8f9fa;
+        }
+        
+        .stakeholders-intro .container {
+            max-width: 900px;
+        }
+        
+        .stakeholders-intro h2 {
+            color: #2a6e3f;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+        
+        .stakeholders-intro p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        
+        .partnership-note {
+            background: linear-gradient(135deg, #f8fff8, #e8f4f8);
+            border-left: 4px solid #2a6e3f;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .partnership-note h3 {
+            color: #2a6e3f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .partnership-note h3 i {
+            font-size: 1.3rem;
+        }
+        
+        .partnership-note p {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        
+        /* Stakeholder Navigation */
+        .stakeholder-nav {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 2px solid #e9f5e9;
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stakeholder-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .nav-title {
+            color: #2a6e3f;
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .stakeholder-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        
+        .tab-btn-small {
+            background: white;
+            border: 2px solid #e0e6dc;
+            color: #666;
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .tab-btn-small:hover {
+            border-color: #2a6e3f;
+            color: #2a6e3f;
+            transform: translateY(-2px);
+        }
+        
+        .tab-btn-small.active {
+            background: #2a6e3f;
+            border-color: #2a6e3f;
+            color: white;
+        }
+        
+        /* Stakeholder Cards Grid */
+        .stakeholders-grid {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .stakeholder-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .stakeholder-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e9ecef;
+        }
+        
+        .stakeholder-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Card Header */
+        .card-header {
+            padding: 30px 30px 20px;
+            position: relative;
+        }
+        
+        .stakeholder-card.individual .card-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        
+        .stakeholder-card.farmer .card-header {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+        
+        .stakeholder-card.artist .card-header {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        }
+        
+        .stakeholder-card.eco .card-header {
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+        }
+        
+        .stakeholder-card.community .card-header {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+        
+        .stakeholder-card.enterprise .card-header {
+            background: linear-gradient(135deg, #f39c12, #d35400);
+        }
+        
+        .stakeholder-card.investor .card-header {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+        }
+        
+        .stakeholder-card.developer .card-header {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+        }
+        
+        .stakeholder-card.buyer .card-header {
+            background: linear-gradient(135deg, #2c3e50, #1a252f);
+        }
+        
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .card-title {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .card-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        /* Card Body */
+        .card-body {
+            padding: 25px 30px;
+            flex-grow: 1;
+        }
+        
+        .card-section {
+            margin-bottom: 25px;
+        }
+        
+        .card-section h4 {
+            color: #2a6e3f;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .card-section h4 i {
+            font-size: 0.9rem;
+        }
+        
+        .card-section p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .contribution-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .contribution-list li {
+            padding: 8px 0;
+            color: #555;
+            font-size: 0.95rem;
+            border-bottom: 1px dashed #e9ecef;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contribution-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .contribution-list li i {
+            color: #2a6e3f;
+            margin-right: 10px;
+            font-size: 0.9rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        /* Card Footer */
+        .card-footer {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .card-action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #2a6e3f;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 0.95rem;
+        }
+        
+        .stakeholder-card.individual .card-action-btn {
+            background: var(--stakeholder-individual);
+        }
+        
+        .stakeholder-card.farmer .card-action-btn {
+            background: var(--stakeholder-farmer);
+        }
+        
+        .stakeholder-card.artist .card-action-btn {
+            background: var(--stakeholder-artist);
+        }
+        
+        .stakeholder-card.eco .card-action-btn {
+            background: var(--stakeholder-eco);
+        }
+        
+        .stakeholder-card.community .card-action-btn {
+            background: var(--stakeholder-community);
+        }
+        
+        .stakeholder-card.enterprise .card-action-btn {
+            background: var(--stakeholder-enterprise);
+        }
+        
+        .stakeholder-card.investor .card-action-btn {
+            background: var(--stakeholder-investor);
+        }
+        
+        .stakeholder-card.developer .card-action-btn {
+            background: var(--stakeholder-developer);
+        }
+        
+        .stakeholder-card.buyer .card-action-btn {
+            background: var(--stakeholder-buyer);
+        }
+        
+        .card-action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* How to Join Section */
+        .how-to-join {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .how-to-join h2 {
+            color: #2a6e3f;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+        
+        .how-to-join p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .join-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto 50px;
+        }
+        
+        .join-step {
+            background: #f8fff8;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e9f5e9;
+            transition: transform 0.3s ease;
+        }
+        
+        .join-step:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #2a6e3f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .join-step h4 {
+            color: #2a6e3f;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .join-step p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        
+        .join-cta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .join-cta-btn {
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .join-individual-btn {
+            background: #2a6e3f;
+            color: white;
+            border: 2px solid #2a6e3f;
+        }
+        
+        .join-organization-btn {
+            background: white;
+            color: #2a6e3f;
+            border: 2px solid #2a6e3f;
+        }
+        
+        .join-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .join-individual-btn:hover {
+            background: #3c8c55;
+        }
+        
+        .join-organization-btn:hover {
+            background: #f1f8e9;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .stakeholder-cards-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .stakeholders-hero {
+                padding: 80px 0 40px;
+            }
+            
+            .stakeholders-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stakeholders-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .stakeholder-nav .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .stakeholder-tabs {
+                justify-content: center;
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            
+            .tab-btn-small {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .stakeholder-cards-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .stakeholder-card {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .card-header {
+                padding: 25px 25px 15px;
+            }
+            
+            .card-body {
+                padding: 20px 25px;
+            }
+            
+            .card-footer {
+                padding: 15px 25px;
+            }
+            
+            .join-steps {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stakeholders-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .card-title {
+                font-size: 1.3rem;
+            }
+            
+            .card-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .join-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .join-cta-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                <h1>Jaivic<span>Bharat</span></h1>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="founding-principles.html"><i class="fas fa-landmark"></i> Principles</a></li>
+                    <li><a href="programs.html"><i class="fas fa-tasks"></i> Programs</a></li>
+                    <li><a href="stakeholders.html" class="active"><i class="fas fa-handshake"></i> Stakeholders</a></li>
+                    <li><a href="media.html"><i class="fas fa-newspaper"></i> Media</a></li>
+                    <li><a href="join.html"><i class="fas fa-user-plus"></i> Join</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Stakeholders Hero Section -->
+    <section class="stakeholders-hero">
+        <div class="container">
+            <h1>Our Stakeholders</h1>
+            <p>Jaivic Bharat is built through continuous partnership—people and institutions working together to create a Jiva-centric, sustainable Bharat.</p>
+        </div>
+    </section>
+
+    <!-- Stakeholders Introduction -->
+    <section class="stakeholders-intro">
+        <div class="container">
+            <h2><i class="fas fa-hands-helping"></i> The Ecosystem of Change</h2>
+            <p>At the heart of Jaivic Bharat lies a diverse community of stakeholders—each playing a unique role in our collective journey toward nature-aligned living. From individuals to institutions, everyone has a part to play.</p>
+            
+            <div class="partnership-note">
+                <h3><i class="fas fa-lightbulb"></i> Partnership Philosophy</h3>
+                <p>We believe that sustainable transformation happens through collaboration, not competition. Every stakeholder brings unique value, and together we create a holistic ecosystem where health, habitat, livelihoods, and culture thrive in harmony with nature.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stakeholder Navigation -->
+    <div class="stakeholder-nav">
+        <div class="container">
+            <div class="nav-title">
+                <i class="fas fa-filter"></i> Filter by Stakeholder Type:
+            </div>
+            <div class="stakeholder-tabs">
+                <button class="tab-btn-small active" data-filter="all">All Stakeholders</button>
+                <button class="tab-btn-small" data-filter="individual">Individuals</button>
+                <button class="tab-btn-small" data-filter="community">Community Groups</button>
+                <button class="tab-btn-small" data-filter="business">Business & Enterprise</button>
+                <button class="tab-btn-small" data-filter="implementation">Implementation Partners</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stakeholders Grid -->
+    <section class="stakeholders-grid">
+        <div class="stakeholder-cards-container">
+            <!-- Individual & Citizens -->
+            <div class="stakeholder-card individual" data-categories="individual">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 class="card-title">Individuals & Citizens</h3>
+                    <div class="card-subtitle">Grassroots Change Agents</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4><i class="fas fa-crosshairs"></i> Your Role</h4>
+                        <p>Participate, learn, volunteer, and lead local action as a citizen committed to nature-aligned living.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4><i class="fas fa-hands-helping"></i> How You Can Contribute</h4>
+                        <ul class="contribution-list">
+                            <li><i class="fas fa-heartbeat"></i> Wellness circles and health awareness drives</li>
+                            <li><i class="fas fa-seedling"></i> Kitchen gardens and urban farming initiatives</li>
+                            <li><i class="fas fa-users"></i> Community events and local meetups</li>
+                            <li><i class="fas fa-bullhorn"></i> Awareness campaigns and digital advocacy</li>
+                            <li><i class="fas fa-hands"></i> Volunteering for local cleanup and restoration projects</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="card-action-btn join-as-individual">
+                        <i class="fas fa-user-plus"></i> Join as Individual
+                    </button>
+                </div>
+            </div>
+
+            <!-- Farmers, Growers & FPOs -->
+            <div class="stakeholder-card farmer" data-categories="community business">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3 class="card-title">Farmers, Growers & FPOs</h3>
+                    <div class="card-subtitle">Food System Stewards</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4><i class="fas fa-crosshairs"></i> Your Role</h4>
+                        <p>Strengthen food systems through regenerative and organic practices that nourish both people and planet.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4><i class="fas fa-hands-helping"></i> How You Can Contribute</h4>
+                        <ul class="contribution-list">
+                            <li><i class="fas fa-leaf"></i> Join the Clean Plate Mission for organic transition</li>
+                            <li><i class="fas fa-network-wired"></i> Participate in fair supply networks</li>
+                            <li><i class="fas fa-store"></i> Supply to local bazaars and community markets</li>
+                            <li><i class="fas fa-graduation-cap"></i> Peer learning and knowledge sharing</li>
+                            <li><i class="fas fa-seedling"></i> Implement regenerative farming practices</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="card-action-btn join-as-farmer">
+                        <i class="fas fa-seedling"></i> Join as Grower/FPO
+                    </button>
+                </div>
+            </div>
+
+            <!-- Artists, Artisans & Cultural Practitioners -->
+            <div class="stakeholder-card artist" data-categories="individual community">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="card-title">Artists, Artisans & Cultural Practitioners</h3>
+                    <div class="card-subtitle">Living Heritage Keepers</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4><i class="fas fa-crosshairs"></i> Your Role</h4>
+                        <p>Keep living traditions alive through dignified work, visibility, and intergenerational knowledge transfer.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4><i class="fas fa-hands-helping"></i> How You Can Contribute</h4>
+                        <ul class="contribution-list">
+                            <li><i class="fas fa-chalkboard-teacher"></i> Conduct workshops and skill-sharing sessions</li>
+                            <li><i class="fas fa-theater-masks"></i> Create cultural experiences and performances</li>
+                            <li><i class="fas fa-shopping-bag"></i> Participate in ethical marketplaces</li>
+                            <li><i class="fas fa-home"></i> Join artist residencies and creative retreats</li>
+                            <li><i class="fas fa-book"></i> Document and preserve traditional knowledge</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="card-action-btn join-as-artist">
+                        <i class="fas fa-music"></i> Join as Culture Partner
+                    </button>
+                </div>
+            </div>
+
+            <!-- Eco-Habitat & Eco-Tourism Partners -->
+            <div class="stakeholder-card eco" data-categories="business implementation">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="card-title">Eco-Habitat & Eco-Tourism Partners</h3>
+                    <div class="card-subtitle">Regenerative Experience Creators</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4><i class="fas fa-crosshairs"></i> Your Role</h4>
+                        <p>Build regenerative stays, habitats, and nature-based wellbeing experiences that harmonize with local ecosystems.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4><i class="fas fa-hands-helping"></i> How You Can Contribute</h4>
+                        <ul class="contribution-list">
+                            <li><i class="fas fa-home"></i> Onboard eco-stays and sustainable properties</li>
+                            <li><i class="fas fa-map-marked-alt"></i> Develop community tourism trails</li>
+                            <li><i class="fas fa-flask"></i> Host habitat pilot projects and research</li>
+                            <li><i class="fas fa-spa"></i> Offer wellness and nature retreats</li>
+                            <li><i class="fas fa-hands"></i> Engage local communities as guides and hosts</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="card-action-btn join-as-eco">
+                        <i class="fas fa-spa"></i> Join as Habitat Partner
+                    </button>
+                </div>
+            </div>
+
+            <!-- Community Organizations -->
+            <div class="stakeholder-card community" data-categories="community">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="card-title">Community Organizations</h3>
+                    <div class="card-subtitle">Local Impact Anchors</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4><i class="fas fa-crosshairs"></i> Your Role</h4>
+                        <p>Anchor programs locally and help scale impact through existing community networks and infrastructure.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4><i class="fas fa-hands-helping"></i> How You Can Contribute</h4>
+                        <ul class="contribution-list">
+                            <li><i class="fas fa-seedling"></i> Host kitchen gardens and urban farms</li>
+                            <li><i class="fas fa-heartbeat"></i> Organize wellness circles and health camps</li>
+                            <li><i class="fas fa-graduation-cap"></i> Run skill development programs</li>
+                            <li><i class="fas fa-calendar-alt"></i> Coordinate cultural and community events</li>
+                            <li><i class="fas fa-users"></i> Mobilize volunteers and community participation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="card-action-btn join-as-community">
+                        <i class="fas fa-hands"></i> Partner as Organization
+                    </button>
+                </div>
+            </div>
+
+            <!-- Enterprises & Local Businesses -->
+            <div class="stakeholder-card enterprise" data-categories="business">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="card-title">Enterprises & Local Businesses</h3>
+                    <div class="card-subtitle">Ethical Market Enablers</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4><i class="fas fa-crosshairs"></i> Your Role</h4>
+                        <p>Enable ethical markets, jobs, and sustainable value chains through conscious business practices.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4><i class="fas fa-hands-helping"></i> How You Can Contribute</h4>
+                        <ul class="contribution-list">
+                            <li><i class="fas fa-user-tie"></i> Provide mentorship and business guidance</li>
+                            <li><i class="fas fa-briefcase"></i> Create job opportunities and apprenticeships</li>
+                            <li><i class="fas fa-shopping-cart"></i> Source locally through ethical procurement</li>
+                            <li><i class="fas fa-hand-holding-usd"></i> Offer sponsorship and in-kind support</li>
+                            <li><i class="fas fa-store"></i> Support marketplace access for local producers</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="card-action-btn join-as-enterprise">
+                        <i class="fas fa-handshake"></i> Partner as Business
+                    </button>
+                </div>
+            </div>
+
+            <!-- Investors, CSR & Philanthropy Partners -->
+            <div class="stakeholder-card investor" data-categories="business">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="card-title">Investors, CSR & Philanthropy Partners</h3>
+                    <div class="card-subtitle">Impact Catalysts</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4><i class="fas fa-crosshairs"></i> Your Role</h4>
+                        <p>Fund scalable programs and high-impact projects with measurable outcomes for people and planet.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4><i class="fas fa-hands-helping"></i> How You Can Contribute</h4>
+                        <ul class="contribution-list">
+                            <li><i class="fas fa-solar-panel"></i> Support solar and sustainability initiatives</li>
+                            <li><i class="fas fa-heartbeat"></i> Fund health and wellness programs</li>
+                            <li><i class="fas fa-graduation-cap"></i> Enable livelihood and skill development</li>
+                            <li><i class="fas fa-flask"></i> Back pilot projects and innovation</li>
+                            <li><i class="fas fa-chart-line"></i> Invest in scalable community models</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="card-action-btn join-as-investor">
+                        <i class="fas fa-hand-holding-usd"></i> Partner via CSR/Philanthropy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Developers, EPCs & Implementers -->
+            <div class="stakeholder-card developer" data-categories="implementation">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3 class="card-title">Developers, EPCs & Implementers</h3>
+                    <div class="card-subtitle">Solution Executors</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4><i class="fas fa-crosshairs"></i> Your Role</h4>
+                        <p>Execute credible projects efficiently and responsibly, bringing sustainability solutions to life.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4><i class="fas fa-hands-helping"></i> How You Can Contribute</h4>
+                        <ul class="contribution-list">
+                            <li><i class="fas fa-file-alt"></i> Submit project proposals and concepts</li>
+                            <li><i class="fas fa-handshake"></i> Partner for project delivery and execution</li>
+                            <li><i class="fas fa-users"></i> Participate in matchmaking and networking</li>
+                            <li><i class="fas fa-tools"></i> Provide technical expertise and innovation</li>
+                            <li><i class="fas fa-chart-line"></i> Scale proven solutions across regions</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="card-action-btn join-as-developer">
+                        <i class="fas fa-tools"></i> Submit a Project
+                    </button>
+                </div>
+            </div>
+
+            <!-- Buyers / Offtakers -->
+            <div class="stakeholder-card buyer" data-categories="business implementation">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="card-title">Buyers / Offtakers</h3>
+                    <div class="card-subtitle">Demand Drivers</div>
+                </div>
+                <div class="card-body">
+                    <div class="card-section">
+                        <h4><i class="fas fa-crosshairs"></i> Your Role</h4>
+                        <p>Accelerate adoption of solar and sustainability solutions through committed demand and market signals.</p>
+                    </div>
+                    <div class="card-section">
+                        <h4><i class="fas fa-hands-helping"></i> How You Can Contribute</h4>
+                        <ul class="contribution-list">
+                            <li><i class="fas fa-signal"></i> Provide clear demand signals</li>
+                            <li><i class="fas fa-flask"></i> Pilot new sustainability solutions</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Onboard sites for deployment</li>
+                            <li><i class="fas fa-users"></i> Support community-scale deployments</li>
+                            <li><i class="fas fa-chart-line"></i> Share performance data and feedback</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="card-action-btn join-as-buyer">
+                        <i class="fas fa-search"></i> Submit Requirement
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Join Section -->
+    <section class="how-to-join">
+        <div class="container">
+            <h2><i class="fas fa-door-open"></i> Ready to Join Our Ecosystem?</h2>
+            <p>Becoming a Jaivic Bharat stakeholder is simple. Choose your pathway and start making an impact today.</p>
+            
+            <div class="join-steps">
+                <div class="join-step">
+                    <div class="step-number">1</div>
+                    <h4>Identify Your Role</h4>
+                    <p>Review the stakeholder categories above to understand where you fit in our ecosystem.</p>
+                </div>
+                <div class="join-step">
+                    <div class="step-number">2</div>
+                    <h4>Explore Opportunities</h4>
+                    <p>Click the join button on any stakeholder card to learn about specific participation pathways.</p>
+                </div>
+                <div class="join-step">
+                    <div class="step-number">3</div>
+                    <h4>Start Contributing</h4>
+                    <p>Connect with our team, join programs, and begin your journey toward nature-aligned impact.</p>
+                </div>
+            </div>
+            
+            <div class="join-cta">
+                <a href="join.html#individuals" class="join-cta-btn join-individual-btn">
+                    <i class="fas fa-user"></i> Join as Individual
+                </a>
+                <a href="join.html#organizations" class="join-cta-btn join-organization-btn">
+                    <i class="fas fa-building"></i> Join as Organization
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Jaivic Bharat</h3>
+                    <p>Nature-Aligned Living, Led by Citizens</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="programs.html">Programs</a>
+                    <a href="stakeholders.html">Stakeholders</a>
+                    <a href="join.html">Join</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> stakeholders@jaivicbharat.org</p>
+                    <p><i class="fas fa-phone"></i> +91 1800-JAIVIC</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Connect With Our Ecosystem</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jaivic Bharat. Built through partnership and collective action.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Stakeholder Filtering
+        document.querySelectorAll('.tab-btn-small').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active button
+                document.querySelectorAll('.tab-btn-small').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const cards = document.querySelectorAll('.stakeholder-card');
+                
+                if (filter === 'all') {
+                    // Show all cards
+                    cards.forEach(card => {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    });
+                } else {
+                    // Filter cards
+                    cards.forEach(card => {
+                        const categories = card.getAttribute('data-categories');
+                        if (categories.includes(filter)) {
+                            card.style.display = 'flex';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                }
+            });
+        });
+
+        // Card button click handlers - redirect to join page with specific parameters
+        document.querySelectorAll('.card-action-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = this.closest('.stakeholder-card');
+                const cardType = card.classList[1]; // individual, farmer, artist, etc.
+                
+                // Map card types to join page parameters
+                const redirectMap = {
+                    'individual': 'join.html#individuals',
+                    'farmer': 'join.html#organizations&form=grower',
+                    'artist': 'join.html#organizations&form=artist',
+                    'eco': 'join.html#organizations&form=tourism',
+                    'community': 'join.html#organizations&form=csr',
+                    'enterprise': 'join.html#organizations&form=capital-partner',
+                    'investor': 'join.html#organizations&form=csr',
+                    'developer': 'join.html#organizations&form=developer',
+                    'buyer': 'join.html#organizations&form=access-supply'
+                };
+                
+                const redirectUrl = redirectMap[cardType] || 'join.html';
+                window.location.href = redirectUrl;
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Initialize card animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.stakeholder-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 + index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

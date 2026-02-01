@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media & Press - Jaivic Bharat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/transitions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Media Page Specific Styles */
+        :root {
+            --media-primary: #2a6e3f;
+            --media-secondary: #3498db;
+            --media-accent: #e67e22;
+        }
+        
+        .media-hero {
+            background: linear-gradient(135deg, rgba(42, 110, 63, 0.9), rgba(26, 188, 156, 0.8)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .media-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(42, 110, 63, 0.7), rgba(52, 152, 219, 0.5));
+            z-index: 1;
+        }
+        
+        .media-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .media-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .media-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .hero-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-icons i {
+            font-size: 2.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-icons i:hover {
+            transform: translateY(-10px) scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Media Inquiries Section */
+        .media-inquiries {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fff8, #f0f8ff);
+        }
+        
+        .inquiries-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .inquiries-header {
+            background: linear-gradient(135deg, var(--media-primary), var(--media-secondary));
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .inquiries-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .inquiries-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .inquiries-content {
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .inquiries-description {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .inquiries-actions {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .inquiry-btn {
+            padding: 18px 40px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-width: 250px;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        .press-kit-btn {
+            background: var(--media-primary);
+            color: white;
+            border: 2px solid var(--media-primary);
+        }
+        
+        .press-kit-btn:hover {
+            background: #3c8c55;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(42, 110, 63, 0.3);
+        }
+        
+        .contact-btn {
+            background: white;
+            color: var(--media-secondary);
+            border: 2px solid var(--media-secondary);
+        }
+        
+        .contact-btn:hover {
+            background: #f0f8ff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.2);
+        }
+        
+        /* In the News Section */
+        .in-the-news {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            color: var(--media-primary);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--media-primary);
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 25px auto 0;
+            line-height: 1.6;
+        }
+        
+        /* News Grid */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 1px solid #e9ecef;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .news-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .news-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.3));
+        }
+        
+        .news-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--media-accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .news-date {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+        
+        .news-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-title {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+        
+        .news-excerpt {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .news-source {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .news-source i {
+            color: var(--media-primary);
+        }
+        
+        .read-more {
+            color: var(--media-primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: var(--media-secondary);
+            gap: 10px;
+        }
+        
+        /* Featured Story */
+        .featured-story {
+            background: linear-gradient(135deg, #f8fff8, #fff8f0);
+            padding: 50px;
+            border-radius: 15px;
+            margin: 60px auto;
+            max-width: 1000px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e9f5e9;
+        }
+        
+        .featured-image {
+            flex: 0 0 300px;
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .featured-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .featured-content {
+            flex: 1;
+        }
+        
+        .featured-badge {
+            display: inline-block;
+            background: var(--media-accent);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .featured-title {
+            color: var(--media-primary);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .featured-excerpt {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        /* Video & Multimedia Section */
+        .multimedia-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .video-thumbnail {
+            height: 180px;
+            background: #2c3e50;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .video-thumbnail::after {
+            content: '\f04b';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .video-thumbnail:hover::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-title {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--media-primary), var(--media-secondary));
+            color: white;
+            text-align: center;
+        }
+        
+        .newsletter-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-container p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .newsletter-form button {
+            background: var(--media-accent);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .newsletter-form button:hover {
+            background: #f39c12;
+            transform: translateY(-2px);
+        }
+        
+        /* Press Contact Info */
+        .press-contact {
+            padding: 50px 0;
+            background: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .contact-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--media-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .contact-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .contact-card a {
+            color: var(--media-secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .featured-story {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px;
+            }
+            
+            .featured-image {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 500px;
+            }
+            
+            .news-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .media-hero {
+                padding: 80px 0 40px;
+            }
+            
+            .media-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .media-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .inquiries-content {
+                padding: 30px;
+            }
+            
+            .inquiries-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .inquiry-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .hero-icons i {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .media-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .inquiries-header {
+                padding: 30px 20px;
+            }
+            
+            .inquiries-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .featured-story {
+                padding: 30px 20px;
+            }
+            
+            .featured-title {
+                font-size: 1.5rem;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                <h1>Jaivic<span>Bharat</span></h1>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="founding-principles.html"><i class="fas fa-landmark"></i> Principles</a></li>
+                    <li><a href="programs.html"><i class="fas fa-tasks"></i> Programs</a></li>
+                    <li><a href="stakeholders.html"><i class="fas fa-handshake"></i> Stakeholders</a></li>
+                    <li><a href="media.html" class="active"><i class="fas fa-newspaper"></i> Media</a></li>
+                    <li><a href="join.html"><i class="fas fa-user-plus"></i> Join</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Media Hero Section -->
+    <section class="media-hero">
+        <div class="container">
+            <h1>Media & Press</h1>
+            <p>Stories, coverage, and conversations about India's organic revolution—celebrating nature-aligned living and the people making it happen.</p>
+            <div class="hero-icons">
+                <i class="fas fa-newspaper"></i>
+                <i class="fas fa-video"></i>
+                <i class="fas fa-microphone"></i>
+                <i class="fas fa-camera"></i>
+                <i class="fas fa-podcast"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Inquiries Section -->
+    <section class="media-inquiries">
+        <div class="inquiries-container">
+            <div class="inquiries-header">
+                <h2><i class="fas fa-bullhorn"></i> Press & Media Inquiries</h2>
+                <p>Connect with us for stories, interviews, and collaborations</p>
+            </div>
+            <div class="inquiries-content">
+                <p class="inquiries-description">
+                    For press kits, interviews, or media partnerships, please contact our communications team. 
+                    We welcome journalists, bloggers, podcasters, and content creators who want to share stories 
+                    about sustainable living, community-led initiatives, and India's journey toward nature-aligned development.
+                </p>
+                <div class="inquiries-actions">
+                    <a href="#" class="inquiry-btn press-kit-btn" id="downloadPressKit">
+                        <i class="fas fa-download"></i> Download Press Kit
+                    </a>
+                    <a href="#pressContact" class="inquiry-btn contact-btn">
+                        <i class="fas fa-envelope"></i> Contact Media Team
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- In the News Section -->
+    <section class="in-the-news">
+        <div class="container">
+            <div class="section-header">
+                <h2>In the News</h2>
+                <p>Featured coverage about Jaivic Bharat and the nature-aligned living movement</p>
+            </div>
+            
+            <!-- Featured Story -->
+            <div class="featured-story">
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Featured Story">
+                </div>
+                <div class="featured-content">
+                    <span class="featured-badge">FEATURED STORY</span>
+                    <h3 class="featured-title">Jaivic Bharat: How Citizens Are Leading India's Organic Revolution</h3>
+                    <p class="featured-excerpt">A deep dive into how grassroots movements across India are transforming agriculture, healthcare, and community living through nature-aligned principles. Discover the stories of farmers, urban dwellers, and entrepreneurs who are creating sustainable alternatives.</p>
+                    <a href="#" class="read-more">
+                        Read Full Article <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- News Grid -->
+            <div class="news-grid">
+                <!-- News Card 1 -->
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                        <span class="news-category">Agriculture</span>
+                        <span class="news-date">Mar 15, 2024</span>
+                    </div>
+                    <div class="news-content">
+                        <h4 class="news-title">From Chemical to Clean: Farmers Embrace Regenerative Practices</h4>
+                        <p class="news-excerpt">How Jaivic Bharat's Clean Plate Mission is helping thousands of farmers transition to organic farming with better yields and healthier soil.</p>
+                        <div class="news-meta">
+                            <div class="news-source">
+                                <i class="fas fa-newspaper"></i> The Sustainable Times
+                            </div>
+                            <a href="#" class="read-more">Read</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Card 2 -->
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                        <span class="news-category">Health</span>
+                        <span class="news-date">Feb 28, 2024</span>
+                    </div>
+                    <div class="news-content">
+                        <h4 class="news-title">Wellness Circles: Community Healing for Modern Times</h4>
+                        <p class="news-excerpt">Monthly community gatherings that blend traditional healing practices with modern wellness approaches are changing healthcare in rural India.</p>
+                        <div class="news-meta">
+                            <div class="news-source">
+                                <i class="fas fa-podcast"></i> Health Forward Podcast
+                            </div>
+                            <a href="#" class="read-more">Listen</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Card 3 -->
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                        <span class="news-category">Livelihoods</span>
+                        <span class="news-date">Jan 22, 2024</span>
+                    </div>
+                    <div class="news-content">
+                        <h4 class="news-title">Artisan Revival: Traditional Crafts Meet Modern Markets</h4>
+                        <p class="news-excerpt">How Jaivic Bharat's ethical marketplaces are creating sustainable livelihoods for artisans while preserving cultural heritage.</p>
+                        <div class="news-meta">
+                            <div class="news-source">
+                                <i class="fas fa-globe"></i> Cultural Economy Digest
+                            </div>
+                            <a href="#" class="read-more">Read</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Card 4 -->
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                        <span class="news-category">Solar Energy</span>
+                        <span class="news-date">Dec 10, 2023</span>
+                    </div>
+                    <div class="news-content">
+                        <h4 class="news-title">Solar Connect: Powering Rural India Responsibly</h4>
+                        <p class="news-excerpt">Innovative community solar projects that provide clean energy while creating local jobs and reducing carbon footprint.</p>
+                        <div class="news-meta">
+                            <div class="news-source">
+                                <i class="fas fa-bolt"></i> Renewable Energy Today
+                            </div>
+                            <a href="#" class="read-more">Read</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Card 5 -->
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1559523182-a284c3fb7cff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                        <span class="news-category">Community</span>
+                        <span class="news-date">Nov 5, 2023</span>
+                    </div>
+                    <div class="news-content">
+                        <h4 class="news-title">Urban Farming Movement Takes Root in Indian Cities</h4>
+                        <p class="news-excerpt">How city dwellers are transforming balconies, terraces, and community spaces into productive kitchen gardens.</p>
+                        <div class="news-meta">
+                            <div class="news-source">
+                                <i class="fas fa-city"></i> Urban Living Magazine
+                            </div>
+                            <a href="#" class="read-more">Read</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Card 6 -->
+                <div class="news-card">
+                    <div class="news-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                        <span class="news-category">Eco-Tourism</span>
+                        <span class="news-date">Oct 18, 2023</span>
+                    </div>
+                    <div class="news-content">
+                        <h4 class="news-title">Regenerative Stays: Tourism That Gives Back</h4>
+                        <p class="news-excerpt">Eco-habitats and sustainable tourism projects that support local communities while protecting natural heritage.</p>
+                        <div class="news-meta">
+                            <div class="news-source">
+                                <i class="fas fa-tree"></i> Travel Consciously
+                            </div>
+                            <a href="#" class="read-more">Read</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video & Multimedia Section -->
+    <section class="multimedia-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Videos & Multimedia</h2>
+                <p>Watch stories from the ground, interviews with community leaders, and documentaries about our work</p>
+            </div>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1593115057322-e94b77572f20?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                        <!-- Play icon added via CSS -->
+                    </div>
+                    <div class="video-info">
+                        <h5 class="video-title">The Soil Healers: Regenerative Farming in Rajasthan</h5>
+                        <div class="video-meta">
+                            <span><i class="far fa-clock"></i> 12:45</span>
+                            <span><i class="far fa-calendar"></i> Feb 2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                        <!-- Play icon added via CSS -->
+                    </div>
+                    <div class="video-info">
+                        <h5 class="video-title">Community Kitchen Gardens: Urban Food Security</h5>
+                        <div class="video-meta">
+                            <span><i class="far fa-clock"></i> 8:22</span>
+                            <span><i class="far fa-calendar"></i> Jan 2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                        <!-- Play icon added via CSS -->
+                    </div>
+                    <div class="video-info">
+                        <h5 class="video-title">Artisan Voices: Preserving India's Craft Heritage</h5>
+                        <div class="video-meta">
+                            <span><i class="far fa-clock"></i> 15:30</span>
+                            <span><i class="far fa-calendar"></i> Dec 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-container">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our media newsletter for press releases, new stories, and exclusive content about the nature-aligned movement.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i> Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press Contact Info -->
+    <section class="press-contact" id="pressContact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Press Contact</h2>
+                <p>Get in touch with our media and communications team</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Media Relations</h3>
+                    <p>For interview requests, press releases, and media partnerships</p>
+                    <p><a href="mailto:press@jaivicbharat.org">press@jaivicbharat.org</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3>Photo & Video</h3>
+                    <p>High-resolution images, b-roll footage, and visual assets</p>
+                    <p><a href="mailto:media-assets@jaivicbharat.org">media-assets@jaivicbharat.org</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Events & Speaking</h3>
+                    <p>Invite our team to speak at events, conferences, or panels</p>
+                    <p><a href="mailto:events@jaivicbharat.org">events@jaivicbharat.org</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Jaivic Bharat</h3>
+                    <p>Nature-Aligned Living, Led by Citizens</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="programs.html">Programs</a>
+                    <a href="stakeholders.html">Stakeholders</a>
+                    <a href="media.html">Media</a>
+                    <a href="join.html">Join</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Media Contact</h4>
+                    <p><i class="fas fa-envelope"></i> press@jaivicbharat.org</p>
+                    <p><i class="fas fa-phone"></i> +91 1800-JAIVIC</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri, 10AM-6PM IST</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Our Stories</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jaivic Bharat. Sharing stories of nature-aligned transformation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Download Press Kit functionality
+        document.getElementById('downloadPressKit').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
+            this.disabled = true;
+            
+            // Simulate download process
+            setTimeout(() => {
+                // In a real implementation, this would trigger a file download
+                // For now, show a success message
+                alert('Thank you! Your press kit download will begin shortly. Check your email for additional resources.');
+                
+                // Reset button
+                this.innerHTML = originalText;
+                this.disabled = false;
+            }, 1500);
+        });
+
+        // Video thumbnail click handlers
+        document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                const videoTitle = this.nextElementSibling.querySelector('.video-title').textContent;
+                alert(`Playing: ${videoTitle}\n\nIn a real implementation, this would open a video player or modal.`);
+            });
+        });
+
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput.value;
+            
+            if (!email) {
+                alert('Please enter your email address.');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+            
+            // Simulate API call
+            setTimeout(() => {
+                alert(`Thank you for subscribing to our media newsletter! You'll receive updates at ${email}.`);
+                emailInput.value = '';
+                submitBtn.innerHTML = originalText;
+            }, 1500);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href.startsWith('#') && document.querySelector(href)) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize news card animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.news-card, .video-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 + index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

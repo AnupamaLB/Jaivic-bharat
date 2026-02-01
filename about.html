@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Jaivic Bharat - Our Story, Mission & Vision</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/transitions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Center Vision & Mission Side by Side */
+        .vision-mission-centered {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+            margin: 50px auto;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+        
+        .centered-vision, .centered-mission {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            border-top: 4px solid;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .centered-vision {
+            border-top-color: #2e8b57;
+            background: linear-gradient(135deg, rgba(46, 139, 87, 0.03), rgba(46, 139, 87, 0.08));
+        }
+        
+        .centered-mission {
+            border-top-color: #3498db;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.03), rgba(52, 152, 219, 0.08));
+        }
+        
+        .centered-vision h2, .centered-mission h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            color: #2e8b57;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .centered-mission h2 {
+            color: #3498db;
+        }
+        
+        .centered-vision p, .centered-mission p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .vision-tag, .mission-tag {
+            display: inline-block;
+            padding: 10px 25px;
+            background: white;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            margin-top: 15px;
+        }
+        
+        .vision-tag {
+            color: #2e8b57;
+            border: 2px solid #2e8b57;
+        }
+        
+        .mission-tag {
+            color: #3498db;
+            border: 2px solid #3498db;
+        }
+        
+        @media (max-width: 768px) {
+            .vision-mission-centered {
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            .centered-vision, .centered-mission {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                <h1>Jaivic<span>Bharat</span></h1>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="founding-principles.html"><i class="fas fa-landmark"></i> Principles</a></li>
+                    <li><a href="programs.html"><i class="fas fa-tasks"></i> Programs</a></li>
+                    <li><a href="stakeholders.html"><i class="fas fa-handshake"></i> Stakeholders</a></li>
+                    <li><a href="media.html"><i class="fas fa-newspaper"></i> Media</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="page-hero about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="page-title">About Jaivic Bharat</h1>
+                <p class="page-subtitle">Nature-Aligned Living, Led by Citizens</p>
+                <div class="hero-decoration">
+                    <i class="fas fa-leaf"></i>
+                    <i class="fas fa-seedling"></i>
+                    <i class="fas fa-recycle"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Centered Vision & Mission Side by Side -->
+    <div class="container">
+        <div class="vision-mission-centered">
+            <!-- Vision Box -->
+            <div class="centered-vision">
+                <h2><i class="fas fa-eye"></i> Our Vision</h2>
+                <p>An India where every community thrives in harmony with nature, leaving zero negative impact on the environment and handing over a better Earth to future generations.</p>
+                <div class="vision-tag">Better Earth Harmony</div>
+            </div>
+            
+            <!-- Mission Box -->
+            <div class="centered-mission">
+                <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+                <p>To regenerate India through nature-aligned living systems across four pillars.</p>
+                <div class="mission-tag">Four Pillars Framework</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Focus Section -->
+    <section class="focus-section">
+        <div class="container">
+            <h2><i class="fas fa-crosshairs"></i> Our Focus</h2>
+            <p>We concentrate our efforts on four interconnected pillars that form the foundation of nature-aligned living:</p>
+            
+            <div class="pillars-grid">
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Health</h3>
+                    <p>Holistic well-being through nature-aligned health practices</p>
+                </div>
+                
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Habitat</h3>
+                    <p>Sustainable living spaces in harmony with natural ecosystems</p>
+                </div>
+                
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Livelihoods</h3>
+                    <p>Regenerative economies rooted in local resources and skills</p>
+                </div>
+                
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Culture</h3>
+                    <p>Reviving traditions that honor our connection to nature</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Story</h2>
+                <div class="section-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+            </div>
+            <div class="story-content">
+                <div class="story-text">
+                    <p>
+                        Jaivic Bharat began in 2015 when farmers, ecologists, and community leaders in Northern India united to address declining soil health and vanishing traditional knowledge.
+                    </p>
+                    <p>
+                        What started as organic farming awareness meetings and campaigns with intellectuals and farmer leaders has grown into a nationwide movement.
+                    </p>
+                    <p>
+                        The name "Jaivic" comes from Sanskrit, meaning "life-giving" – representing our commitment to regenerative systems.
+                    </p>
+                </div>
+                <div class="facebook-legacy">
+                    <div class="facebook-card">
+                        <i class="fab fa-facebook"></i>
+                        <h3>Follow Our Journey</h3>
+                        <p>From the beginning on our legacy Facebook page where we've documented every step since 2015.</p>
+                        <a href="#" class="facebook-link">
+                            <i class="fab fa-facebook"></i> Visit Our Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-card">
+                <i class="fas fa-quote-left"></i>
+                <blockquote>
+                    "A tree takes what it needs and gives back more. Can our lives do the same?"
+                </blockquote>
+                <p class="quote-belief">We believe they can. Join our movement.</p>
+                <div class="quote-action">
+                    <a href="join.html" class="join-button">
+                        <i class="fas fa-user-plus"></i> Join the Movement
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Jaivic Bharat</h3>
+                    <p>Nature-Aligned Living, Led by Citizens</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="founding-principles.html">Principles</a>
+                    <a href="programs.html">Programs</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> contact@jaivicbharat.org</p>
+                    <p><i class="fas fa-phone"></i> +91 1800-JAIVIC</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jaivic Bharat. Health • Habitat • Livelihoods • Culture</p>
+                <p>Leaving zero impact, building a better Earth</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Set active navigation link
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set About link as active
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === 'about.html') {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

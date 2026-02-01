@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Jaivic Bharat - Choose Your Participation Path</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/transitions.css">
+	<link rel="stylesheet" href="css/join.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Join Page Specific Styles */
+        :root {
+            --card-green: #2e8b57;
+            --card-blue: #3498db;
+            --card-orange: #e67e22;
+            --card-purple: #9b59b6;
+            --card-teal: #1abc9c;
+            --card-red: #e74c3c;
+            --card-yellow: #f1c40f;
+            --card-brown: #8b4513;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                <h1>Jaivic<span>Bharat</span></h1>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="founding-principles.html"><i class="fas fa-landmark"></i> Principles</a></li>
+                    <li><a href="programs.html"><i class="fas fa-tasks"></i> Programs</a></li>
+                    <li><a href="stakeholders.html"><i class="fas fa-handshake"></i> Stakeholders</a></li>
+                    <li><a href="media.html"><i class="fas fa-newspaper"></i> Media</a></li>
+                    <li><a href="join.html" class="active"><i class="fas fa-user-plus"></i> Join</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Join Hero Section -->
+    <section class="join-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Want to be part of it? Join the movement.</h1>
+                <h2 class="hero-subtitle">Join Jaivic-Bharat</h2>
+                <p class="hero-description">Choose how you want to participate in India's nature-aligned transformation.</p>
+                <div class="hero-icons">
+                    <i class="fas fa-leaf"></i>
+                    <i class="fas fa-hands-helping"></i>
+                    <i class="fas fa-users"></i>
+                    <i class="fas fa-seedling"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Tabs Section -->
+    <section class="join-tabs-section">
+        <div class="container">
+            <!-- Tabs Navigation -->
+            <div class="tabs-navigation">
+                <button class="tab-btn active" data-tab="individuals">
+                    <i class="fas fa-user"></i>
+                    <span>Individuals</span>
+                    <div class="tab-indicator"></div>
+                </button>
+                <button class="tab-btn" data-tab="organizations">
+                    <i class="fas fa-building"></i>
+                    <span>Organizations</span>
+                    <div class="tab-indicator"></div>
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tabs-content">
+                <!-- INDIVIDUALS TAB -->
+                <div class="tab-pane active" id="individuals-tab">
+                    <div class="tab-description">
+                        <h3><i class="fas fa-user-friends"></i> Be part of nature-aligned action</h3>
+                        <p>Connect, contribute your time or skills, and help grow community-led solutions.</p>
+                    </div>
+
+                    <!-- Individuals Cards Grid -->
+                    <div class="cards-grid">
+                        <!-- Card 1: Become a Member -->
+                        <div class="join-card" data-card="member" style="border-top: 4px solid var(--card-green);">
+                            <div class="card-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <h4>Become a Member</h4>
+                            <p class="card-description">
+                                Join the movement community—get access to opportunities, invites, community opportunities and member-only updates.
+                            </p>
+                            <button class="card-btn open-individual-form" data-form="member">
+                                <i class="fas fa-user-plus"></i> Join as Member
+                            </button>
+                        </div>
+
+                        <!-- Card 2: Join as Subscriber -->
+                        <div class="join-card" data-card="subscriber" style="border-top: 4px solid var(--card-blue);">
+                            <div class="card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Join as Subscriber</h4>
+                            <p class="card-description">
+                                Get updates about new chapters, programs, events, and ways to participate through mail and notifications.
+                            </p>
+                            <button class="card-btn open-individual-form" data-form="subscriber">
+                                <i class="fas fa-bell"></i> Subscribe for Updates
+                            </button>
+                        </div>
+
+                        <!-- Card 3: Volunteer -->
+                        <div class="join-card" data-card="volunteer" style="border-top: 4px solid var(--card-orange);">
+                            <div class="card-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h4>Volunteer</h4>
+                            <p class="card-description">
+                                Give your time or skills to support local action and community initiatives. Connect problem with solution implementers.
+                            </p>
+                            <button class="card-btn open-individual-form" data-form="volunteer">
+                                <i class="fas fa-hands"></i> Volunteer Now
+                            </button>
+                        </div>
+
+                        <!-- Card 4: Lead a Chapter -->
+                        <div class="join-card" data-card="chapter-leader" style="border-top: 4px solid var(--card-purple);">
+                            <div class="card-icon">
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <h4>Lead a Chapter</h4>
+                            <p class="card-description">
+                                Start or lead local circles and help build the movement in your city or district. Contribute through media and podcasts.
+                            </p>
+                            <button class="card-btn open-individual-form" data-form="chapter-leader">
+                                <i class="fas fa-bullhorn"></i> Lead a Chapter
+                            </button>
+                        </div>
+
+                        <!-- Card 5: Bring an Idea / Project -->
+                        <div class="join-card" data-card="idea-project" style="border-top: 4px solid var(--card-teal);">
+                            <div class="card-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Bring an Idea / Project</h4>
+                            <p class="card-description">
+                                Seeking support to implement your nature-aligned initiative. Get connected with resources and partners.
+                            </p>
+                            <button class="card-btn open-project-modal">
+                                <i class="fas fa-rocket"></i> Submit Your Idea
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ORGANIZATIONS TAB -->
+                <div class="tab-pane" id="organizations-tab">
+                    <div class="tab-description">
+                        <h3><i class="fas fa-handshake"></i> Partner with Purpose</h3>
+                        <p>Multiple pathways for organizations to contribute to nature-aligned transformation.</p>
+                    </div>
+
+                    <!-- Organizations Cards Grid -->
+                    <div class="cards-grid">
+                        <!-- Card 5: Capital Partner -->
+                        <div class="join-card" data-card="capital-partner" style="border-top: 4px solid var(--card-green);">
+                            <div class="card-icon">
+                                <i class="fas fa-solar-panel"></i>
+                            </div>
+                            <h4>Capital Partner (Eco Technology)</h4>
+                            <p class="card-description">
+                                Support large-scale and grassroots sustainability initiatives through structured participation.
+                            </p>
+                            <button class="card-btn open-org-form" data-form="capital-partner">
+                                <i class="fas fa-handshake"></i> Join as Capital Partner
+                            </button>
+                        </div>
+
+                        <!-- Card 6: Developer / EPC -->
+                        <div class="join-card" data-card="developer" style="border-top: 4px solid var(--card-blue);">
+                            <div class="card-icon">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <h4>Developer / EPC / Implementer</h4>
+                            <p class="card-description">
+                                Bring execution capability for on-ground projects—design, build, deploy, operate.
+                            </p>
+                            <button class="card-btn open-org-form" data-form="developer">
+                                <i class="fas fa-tools"></i> Submit a Project
+                            </button>
+                        </div>
+
+                        <!-- Card 7: Access Supply -->
+                        <div class="join-card" data-card="access-supply" style="border-top: 4px solid var(--card-orange);">
+                            <div class="card-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h4>Access Supply (Power / Solutions)</h4>
+                            <p class="card-description">
+                                Connect with verified providers in our network to procure sustainability solutions.
+                            </p>
+                            <button class="card-btn open-org-form" data-form="access-supply">
+                                <i class="fas fa-search"></i> Submit Requirement
+                            </button>
+                        </div>
+
+                        <!-- Card 8: Grower / FPO -->
+                        <div class="join-card" data-card="grower" style="border-top: 4px solid var(--card-purple);">
+                            <div class="card-icon">
+                                <i class="fas fa-tractor"></i>
+                            </div>
+                            <h4>Grower / FPO</h4>
+                            <p class="card-description">
+                                Connect production groups and farmers with demand, support systems, and market linkages.
+                            </p>
+                            <button class="card-btn open-org-form" data-form="grower">
+                                <i class="fas fa-seedling"></i> Join as Grower/FPO
+                            </button>
+                        </div>
+
+                        <!-- Card 9: Eco-Tourism / Habitat Partner -->
+                        <div class="join-card" data-card="tourism" style="border-top: 4px solid var(--card-teal);">
+                            <div class="card-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <h4>Eco-Tourism / Habitat Partner</h4>
+                            <p class="card-description">
+                                Collaborate on nature-centric stays, retreats, habitat projects, and regenerative experiences.
+                            </p>
+                            <button class="card-btn open-org-form" data-form="tourism">
+                                <i class="fas fa-spa"></i> Join as Habitat Partner
+                            </button>
+                        </div>
+
+                        <!-- Card 10: CSR / Philanthropy -->
+                        <div class="join-card" data-card="csr" style="border-top: 4px solid var(--card-red);">
+                            <div class="card-icon">
+                                <i class="fas fa-hands-heart"></i>
+                            </div>
+                            <h4>CSR / Philanthropy Partner</h4>
+                            <p class="card-description">
+                                Enable high-impact community outcomes with credible projects, reporting, and learnings.
+                            </p>
+                            <button class="card-btn open-org-form" data-form="csr">
+                                <i class="fas fa-hand-holding-heart"></i> Partner via CSR
+                            </button>
+                        </div>
+
+                        <!-- Card 11: Carbon / Climate -->
+                        <div class="join-card" data-card="carbon" style="border-top: 4px solid var(--card-brown);">
+                            <div class="card-icon">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <h4>Carbon / Climate Partner</h4>
+                            <p class="card-description">
+                                Collaborate on climate programs, measurement, verification, and ecosystem outcomes.
+                            </p>
+                            <button class="card-btn open-org-form" data-form="carbon">
+                                <i class="fas fa-cloud"></i> Join as Climate Partner
+                            </button>
+                        </div>
+
+                        <!-- Card 12: Artist / Culture -->
+                        <div class="join-card" data-card="artist" style="border-top: 4px solid var(--card-yellow);">
+                            <div class="card-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4>Artist / Culture Partner</h4>
+                            <p class="card-description">
+                                Keep culture alive through art, crafts, storytelling, festivals, and community experiences.
+                            </p>
+                            <button class="card-btn open-org-form" data-form="artist">
+                                <i class="fas fa-music"></i> Join as Culture Partner
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALS SECTION -->
+    <!-- Donation Policy Modal -->
+    <div class="modal" id="donationPolicyModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Donation Policy & Transparency (Jaivic Foundation)</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="policy-content">
+                    <ul class="policy-points">
+                        <li>
+                            <strong>Purpose:</strong> Donations support nature-centric, community-led work across health, habitat, livelihoods, culture, and ecological regeneration.
+                        </li>
+                        <li>
+                            <strong>Where it goes:</strong> Contributions are received through Jaivic Foundation and routed to verified initiatives, including partner NGOs and foundations aligned with the mission.
+                        </li>
+                        <li>
+                            <strong>Cause preference:</strong> If you specify a cause, we make best efforts to route it accordingly. If exact routing isn't feasible, it supports the closest aligned initiative or where it's needed most.
+                        </li>
+                        <li>
+                            <strong>Receipt:</strong> You will receive an acknowledgement/receipt on your provided email.
+                        </li>
+                        <li>
+                            <strong>Use of funds:</strong> Program delivery, community activities, materials/tools, training, field operations, and necessary administration.
+                        </li>
+                        <li>
+                            <strong>Reporting:</strong> Periodic updates on outcomes through official channels and, where possible, direct donor updates.
+                        </li>
+                        <li>
+                            <strong>Privacy:</strong> Donor data is used only for receipts, donation communication, and updates; we do not sell donor data.
+                        </li>
+                    </ul>
+                    
+                    <div class="policy-agreement">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="policyAgree" required>
+                            <label for="policyAgree">
+                                I have read and agree to the Donation Policy & Transparency. <span class="required-star">*</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn-secondary modal-cancel">Cancel</button>
+                <button class="btn-primary modal-agree" disabled>I Agree & Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Idea Modal -->
+    <div class="modal" id="projectIdeaModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Submit Your Project / Idea</h3>
+                <p class="modal-subtitle">Tell us about your nature-aligned initiative seeking support</p>
+                <button class="modal-close">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <form id="projectIdeaForm" class="modal-form">
+                    <!-- Project Title -->
+                    <div class="form-group">
+                        <label for="projectTitle">
+                            <i class="fas fa-heading"></i> Project / Idea title <span class="required-star">*</span>
+                        </label>
+                        <input type="text" id="projectTitle" name="projectTitle" required 
+                               placeholder="e.g., Community Organic Farming Initiative">
+                    </div>
+                    
+                    <!-- Sector Dropdown -->
+                    <div class="form-group">
+                        <label for="projectSector">
+                            <i class="fas fa-tags"></i> Sector / theme <span class="required-star">*</span>
+                        </label>
+                        <select id="projectSector" name="projectSector" required>
+                            <option value="" disabled selected>Select sector</option>
+                            <option value="health">Health</option>
+                            <option value="habitat">Habitat</option>
+                            <option value="livelihoods">Livelihoods</option>
+                            <option value="culture">Culture</option>
+                            <option value="nature">Nature</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Stage Selection -->
+                    <div class="form-group">
+                        <label><i class="fas fa-chart-line"></i> Stage <span class="required-star">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="projectStage" value="ideation" required>
+                                <span>Ideation</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="projectStage" value="prototype">
+                                <span>Prototype</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="projectStage" value="pilot">
+                                <span>Pilot-ready</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="projectStage" value="operations">
+                                <span>Early operations</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Support Needed (Multi-select) -->
+                    <div class="form-group">
+                        <label><i class="fas fa-hands-helping"></i> What support are you seeking? <span class="required-star">*</span></label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="supportNeeded[]" value="funding">
+                                <span>Funding / capital support</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="supportNeeded[]" value="implementation">
+                                <span>Implementation partners</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="supportNeeded[]" value="mentorship">
+                                <span>Mentorship / advisory</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="supportNeeded[]" value="pilots">
+                                <span>Customer or community pilots</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="supportNeeded[]" value="market">
+                                <span>Market linkages / offtake</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Geography -->
+                    <div class="form-group">
+                        <label for="projectGeography">
+                            <i class="fas fa-map"></i> Preferred geography for implementation
+                        </label>
+                        <input type="text" id="projectGeography" name="projectGeography" 
+                               placeholder="e.g., Rajasthan, Karnataka, Pan-India">
+                    </div>
+                    
+                    <!-- Description -->
+                    <div class="form-group">
+                        <label for="projectDescription">
+                            <i class="fas fa-file-alt"></i> Short description (150–300 words) <span class="required-star">*</span>
+                        </label>
+                        <textarea id="projectDescription" name="projectDescription" rows="5" required 
+                                  placeholder="Describe the problem, your solution, and who benefits..."></textarea>
+                        <div class="char-counter">
+                            <span id="charCount">0</span> / 300 words
+                        </div>
+                    </div>
+                    
+                    <!-- Expected Outcomes -->
+                    <div class="form-group">
+                        <label for="projectOutcomes">
+                            <i class="fas fa-bullseye"></i> Expected outcomes (short bullets)
+                        </label>
+                        <textarea id="projectOutcomes" name="projectOutcomes" rows="3" 
+                                  placeholder="• Improved soil health
+• 100+ farmers trained
+• Reduced chemical use by 80%"></textarea>
+                    </div>
+                    
+                    <!-- Budget Range -->
+                    <div class="form-group">
+                        <label for="projectBudget">
+                            <i class="fas fa-rupee-sign"></i> Budget range (optional)
+                        </label>
+                        <select id="projectBudget" name="projectBudget">
+                            <option value="" selected>Select budget range</option>
+                            <option value="under1L">Under ₹1 lakh</option>
+                            <option value="1-5L">₹1-5 lakhs</option>
+                            <option value="5-10L">₹5-10 lakhs</option>
+                            <option value="10-25L">₹10-25 lakhs</option>
+                            <option value="25-50L">₹25-50 lakhs</option>
+                            <option value="50L-1Cr">₹50 lakhs - ₹1 crore</option>
+                            <option value="1-5Cr">₹1-5 crores</option>
+                            <option value="5Cr+">Above ₹5 crores</option>
+                            <option value="confidential">Prefer not to disclose</option>
+                        </select>
+                    </div>
+                    
+                    <!-- File Upload -->
+                    <div class="form-group">
+                        <label for="projectAttachment">
+                            <i class="fas fa-paperclip"></i> Upload (optional): Pitch deck / concept notes (PDF)
+                        </label>
+                        <div class="file-upload">
+                            <input type="file" id="projectAttachment" name="projectAttachment" 
+                                   accept=".pdf" class="file-input">
+                            <label for="projectAttachment" class="file-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Choose PDF file (max 5MB)</span>
+                            </label>
+                            <div class="file-info" id="fileInfo"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Note -->
+                    <div class="form-note warning-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p>
+                            <strong>Note:</strong> Submissions are reviewed by the Jaivic-Bharat network. 
+                            We may connect you to relevant partners and pathways where aligned. 
+                            Submission does not guarantee funding or partnership.
+                        </p>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary modal-submit">
+                            <i class="fas fa-paper-plane"></i> Submit Project Idea
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Individual Basic Form Modal -->
+    <div class="modal" id="individualFormModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="individualFormTitle">Join Jaivic Bharat</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <form id="individualBasicForm" class="modal-form">
+                    <input type="hidden" id="formType" name="formType" value="">
+                    
+                    <!-- Step 1: Basics -->
+                    <div class="form-step active" id="step1">
+                        <h4><i class="fas fa-user-circle"></i> Step 1: Basic Information</h4>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name <span class="required-star">*</span></label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required-star">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number <span class="required-star">*</span></label>
+                                <input type="tel" id="mobile" name="mobile" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City / District <span class="required-star">*</span></label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="state">State <span class="required-star">*</span></label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>The area I care about <span class="required-star">*</span></label>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="areas[]" value="health">
+                                    <span>Health</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="areas[]" value="habitat">
+                                    <span>Habitat</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="areas[]" value="livelihoods">
+                                    <span>Livelihoods</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="areas[]" value="culture">
+                                    <span>Culture</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>How I can contribute <span class="required-star">*</span></label>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="contribution[]" value="time">
+                                    <span>Time</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="contribution[]" value="skills">
+                                    <span>Skills</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="contribution[]" value="community">
+                                    <span>Community support</span>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="contribution[]" value="mentorship">
+                                    <span>Mentorship</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message (optional)</label>
+                            <textarea id="message" name="message" rows="3" 
+                                      placeholder="Tell us anything you'd like us to know."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="attachment">Attachment (optional)</label>
+                            <input type="file" id="attachment" name="attachment" class="file-input">
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">
+                                I agree to be contacted by Jaivic-Bharat for updates and next steps. <span class="required-star">*</span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" id="nextBtn">Next</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Specialized (for Donate/Startup) -->
+                    <div class="form-step" id="step2">
+                        <h4><i class="fas fa-cog"></i> Step 2: Additional Information</h4>
+                        <div id="specializedFields">
+                            <!-- This will be populated based on form type -->
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" id="prevBtn">Previous</button>
+                            <button type="submit" class="btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Jaivic Bharat</h3>
+                    <p>Nature-Aligned Living, Led by Citizens</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="join.html" class="active">Join</a>
+                    <a href="programs.html">Programs</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> join@jaivicbharat.org</p>
+                    <p><i class="fas fa-phone"></i> +91 1800-JAIVIC</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Our Journey</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jaivic Bharat. Multiple pathways for nature-aligned participation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/join.js"></script>
+</body>
+</html>
